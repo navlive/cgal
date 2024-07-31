@@ -40,7 +40,7 @@ namespace CGAL {
 namespace KSP_3 {
 namespace internal {
 
-const std::tuple<unsigned char, unsigned char, unsigned char>
+inline const std::tuple<unsigned char, unsigned char, unsigned char>
 get_idx_color(std::size_t idx) {
 
   CGAL::Random rand(static_cast<unsigned int>(idx));
@@ -924,7 +924,7 @@ void dump_polygon(const std::vector<typename K::Point_3>& pts, const std::string
   saver.export_polygon_soup_3(pts2, filename);
 }
 
-void dump_polygon(const std::vector<CGAL::Epick::Point_3>& pts, const std::string& filename) {
+inline void dump_polygon(const std::vector<CGAL::Epick::Point_3>& pts, const std::string& filename) {
   Saver<CGAL::Epick> saver;
   std::vector<std::vector<CGAL::Epick::Point_3> > pts2;
   pts2.push_back(pts);
@@ -932,7 +932,7 @@ void dump_polygon(const std::vector<CGAL::Epick::Point_3>& pts, const std::strin
   saver.export_polygon_soup_3(pts2, filename);
 }
 
-void dump_polygona(const std::vector<CGAL::Epick::Point_3>& pts, const std::string& filename) {
+inline void dump_polygona(const std::vector<CGAL::Epick::Point_3>& pts, const std::string& filename) {
   Saver<CGAL::Epick> saver;
   std::vector<std::vector<CGAL::Epick::Point_3> > pts2;
   pts2.push_back(pts);
@@ -940,30 +940,30 @@ void dump_polygona(const std::vector<CGAL::Epick::Point_3>& pts, const std::stri
   saver.export_polygon_soup_3(pts2, filename);
 }
 
-void dump_polygons(const std::vector<std::vector<CGAL::Epick::Point_3> >& pts, const std::string& filename) {
+inline void dump_polygons(const std::vector<std::vector<CGAL::Epick::Point_3> >& pts, const std::string& filename) {
   Saver<CGAL::Epick> saver;
 
   saver.export_polygon_soup_3(pts, filename);
 }
-void dump_polygons(const std::vector<std::vector<std::vector<CGAL::Epick::Point_3> > >& pts, const std::string& filename) {
+inline void dump_polygons(const std::vector<std::vector<std::vector<CGAL::Epick::Point_3> > >& pts, const std::string& filename) {
   Saver<CGAL::Epick> saver;
 
   saver.export_polygon_soup_3(pts, filename);
 }
 
-void dump_indexed_triangles(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<std::size_t>& tris, const std::string& filename) {
+inline void dump_indexed_triangles(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<std::size_t>& tris, const std::string& filename) {
   Saver<CGAL::Epick> saver;
 
   saver.export_indexed_triangles_3(pts, tris, filename);
 }
 
-void dump_indexed_polygons(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<std::vector<std::size_t> >& polys, const std::string& filename) {
+inline void dump_indexed_polygons(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<std::vector<std::size_t> >& polys, const std::string& filename) {
   Saver<CGAL::Epick> saver;
 
   saver.export_indexed_polygons_3(pts, polys, filename);
 }
 
-  void dump_polygons(const std::vector<std::vector<CGAL::Epick::Point_3> >& pts, const std::vector<CGAL::IO::Color>& colors, const std::string& filename) {
+inline void dump_polygons(const std::vector<std::vector<CGAL::Epick::Point_3> >& pts, const std::vector<CGAL::IO::Color>& colors, const std::string& filename) {
   Saver<CGAL::Epick> saver;
 
   saver.export_polygon_soup_3(pts, colors, filename);
@@ -1008,7 +1008,7 @@ void dump_polygons(
   saver.export_polygon_soup_3(polygons, name);
 }
 
-void dump_points(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<CGAL::Epick::Vector_3>& normals, const std::vector<CGAL::IO::Color>& colors, const std::string& filename) {
+inline void dump_points(const std::vector<CGAL::Epick::Point_3>& pts, const std::vector<CGAL::Epick::Vector_3>& normals, const std::vector<CGAL::IO::Color>& colors, const std::string& filename) {
   Saver<CGAL::Epick> saver;
   saver.export_points_3(pts, normals, colors, filename);
 }
